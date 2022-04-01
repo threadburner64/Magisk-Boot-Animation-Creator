@@ -1,11 +1,8 @@
-
-from email.mime import image
 from genericpath import isdir, isfile
-from os import getcwd, listdir, mkdir, remove, rmdir
+from os import getcwd, listdir, mkdir, remove
 import os
 from shutil import copyfile, move, rmtree
 import sys
-
 import zipfile
 from PyQt5 import QtWidgets,uic
 from PIL import Image
@@ -123,7 +120,6 @@ class UI():
 
             f = open(target_dir+"desc.txt","w")
             f.write(str(
-
                 self.width.value())
                 +" "
                 +str(self.height.value())
@@ -169,11 +165,6 @@ class UI():
             for file in listdir(target_dir+"part0"):
                 zf.write(target_dir+"part0/"+file,"part0/"+file)
             zf.close()
-            #zfi = zipfile.ZipInfo("part0")
-            
-            
-            #zf.writestr(zfi,'')
-                
 
         def create_video_boot():
             None
@@ -275,12 +266,3 @@ class UI():
                 window.activateWindow()
                 
 UI.init()
-""""
-id=val
-name=val
-version=v1
-versionCode=1
-author=MainLevel E.u.
-description=val
-minMagisk=19000
-"""""
